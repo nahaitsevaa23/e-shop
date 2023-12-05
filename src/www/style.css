@@ -1,0 +1,33 @@
+body{
+    background-color: white	;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    
+    font-family:Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+    color:#15243A;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center
+}
+h2{
+   
+    color: #15243A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+
+    
+}
+a{
+    color:#15243A;
+    font-size: 18px;
+}
+p{
+    font-family:Arial, Helvetica, sans-serif
+}
+img{
+    image-orientation: from-image;
+    width:255px ;
+}

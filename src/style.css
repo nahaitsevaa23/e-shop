@@ -1,0 +1,21 @@
+article{
+    
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    margin-right: 82.5px;
+    margin-left: 82.5px;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    font-family: 'Oswald', sans-serif;
+}
+h1{
+    text-align: center;
+}

@@ -1,0 +1,47 @@
+{
+    "Natka": {
+        "heslo": "1234",
+        "doprava": "prodejna"
+    },
+    "nekdo": {
+        "heslo": "28461937"
+    },
+    "Nekdo": {
+        "heslo": "28461937"
+    },
+    "": {
+        "heslo": "28461937"
+    },
+    "ab": {
+        "heslo": "1234",
+        "doprava": "zasilkovna"
+    },
+    "a": {
+        "heslo": "asdfghjk"
+    },
+    "L": {
+        "heslo": "asdfghjk"
+    },
+    "/": {
+        "heslo": "asdfghjk"
+    },
+    "m": {
+        "heslo": "qwertzui"
+    },
+    "D": {
+        "heslo": "qwertzui"
+    },
+    "T": {
+        "heslo": "qwertzui"
+    },
+    "U": {
+        "heslo": "qwertzui"
+    },
+    "rt": {
+        "heslo": "qwertzui"
+    },
+    "john": {
+        "heslo": "QWERTZrand01",
+        "doprava": "prodejna"
+    }
+}
