@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>moje-objednavka</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <% if(polozky) { %>
+        <ul>
+            <% for(polozka in polozky) { %>
+                <li><%= polozka %> <%= polozky[polozka] %> ks</li>
+            <% } %>
+        </ul>
+    <% } %>
     <h2>Zadejte údaje platební karty o nic se nebojte</h2>
     <h3>Zvolte způsob dopravy</h3>
     <input type = "radio" id="vyzvednoutNaProdejne" name="zpusobDopravy" value="prodejna">

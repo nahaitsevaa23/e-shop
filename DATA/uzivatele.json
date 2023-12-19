@@ -1,7 +1,10 @@
 {
     "Natka": {
         "heslo": "1234",
-        "doprava": "prodejna"
+        "doprava": "prodejna",
+        "kosik": {
+            "pomeranč": 3
+        }
     },
     "nekdo": {
         "heslo": "28461937"
@@ -14,7 +17,11 @@
     },
     "ab": {
         "heslo": "1234",
-        "doprava": "zasilkovna"
+        "doprava": "zasilkovna",
+        "kosik": {
+            "pomeranč": 2,
+            "jablko": 1
+        }
     },
     "a": {
         "heslo": "asdfghjk"
@@ -29,10 +36,19 @@
         "heslo": "qwertzui"
     },
     "D": {
-        "heslo": "qwertzui"
+        "heslo": "qwertzui",
+        "kosik": {
+            "pomeranč": 2,
+            "jablko": 1
+        },
+        "doprava": "prodejna"
     },
     "T": {
-        "heslo": "qwertzui"
+        "heslo": "qwertzui",
+        "kosik": {
+            "pomeranč": 5,
+            "jablko": 2
+        }
     },
     "U": {
         "heslo": "qwertzui"

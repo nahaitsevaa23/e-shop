@@ -7,10 +7,10 @@ body{
     font-family:Arial, Helvetica, sans-serif;
 }
 h1{
-    text-align: center;
+    
     color:#15243A;
     font-family:Arial, Helvetica, sans-serif;
-    text-align: center
+    
 }
 h2{
    
@@ -30,4 +30,8 @@ p{
 img{
     image-orientation: from-image;
     width:255px ;
+}
+main{
+    width: 1200px;
+    margin: auto;
 }

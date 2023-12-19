@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>koupit</title>
+</head>
+<body>
+    <header><h1> </h1></header>
+    <h2>Přihlášení</h2>
+    <form action="/prihlaseni" method="post">
+            <lable for="jmeno">Jméno:</laable>
+            <input type="text" name="jmeno" value="Honza"><br>
+            <lable for="heslo">Heslo:</label>
+            <input type="password" name="heslo" value="1234">
+            <input type="submit" value="Pokračovat">
+
+    </form>
+    <% if(typeof chyba_prihlaseni !== 'undefined') { %>
+        <div><%= chyba_prihlaseni %></div>
+    <% } %>
+    <h2>Nemáte účet? Zaregistrujte se</h2>
+    
+    
+    <!--<form action="/registrace" method="post">
+        <lable for="jmeno">Jméno:</lable>
+        <input type="text" name="jmeno"><br />
+        <lable for="heslo">Heslo:</lable>
+        <input type="password" name="heslo"><br/>
+        <lable for="Zkontrolujte heslo">Zkontrolujte heslo</lable>
+        <input type="password" name="heslo_znovu"><br />
+        <input type="submit" value="Pokračovat">
+    </form> -->
+    <% if(typeof chyba_registrace !== 'undefined') { %>
+        <span style="color: red;"><%=chyba_registrace%></span>
+    <% } %>
+    <a href="/registrace">zde</a>
+    
+</body>
+</html>

@@ -11,12 +11,26 @@
 <section>
     <article><h1>ovoce</h1>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX8gMbNpHHjsHzdb4zmy2kFghuSfDnLYJc5Q&usqp=CAU" alt="Pomeranč">
-<a href="/koupit.html"><h3><strong>Do Košiku</strong></h3></a>
+<button onclick="pridatDoKosiku('pomeranč')">+</button>
 
 </article>
 <article>
  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Fuji_apple.jpg/1200px-Fuji_apple.jpg" alt="Jablko">
+ <button onclick="pridatDoKosiku('jablko')">+</button>
 </article>
 </section>
+<script>
+    function pridatDoKosiku(co){
+        fetch('/pridatDoKosiku',{
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                zbozi: co
+            })
+        });
+    }
+</script>
 </body>
 </html>

@@ -26,17 +26,37 @@ app.use(session({
 
 
 app.get("/koupit.html", (req, res) => {
+    const prihlaseny = req.session.prihlasenyUzivatel;
+
+    if(typeof prihlaseny === 'undefined') {
+        return res.redirect('/prihlaseni');
+    }
+
     res.render("koupit", {
         chyba_prihlaseni: req.session.chyba_prihlaseni,
         chyba_registrace: req.session.chyba_registrace,
     })
 })
+
 app.get("/kosik.html", (req, res) => {
+    const prihlaseny = req.session.prihlasenyUzivatel;
+    
+    if(typeof prihlaseny === 'undefined') {
+        return res.redirect('/prihlaseni');
+    }
+
     res.render("kosik", {
         chyba: req.query.chyba,
     })
 })
+
 app.get("/uzivatel.html", (req, res) => {
+    const prihlaseny = req.session.prihlasenyUzivatel;
+    
+    if(typeof prihlaseny === 'undefined') {
+        return res.redirect('/prihlaseni');
+    }
+
     res.render("uzivatel", {
         chyba: req.query.chyba,
     })
@@ -72,8 +92,9 @@ app.post("/prihlaseni", (req, res) => {
 
     req.session.prihlasenyUzivatel = jmeno;
 
-    res.redirect("/uzivatel.html")
+    res.redirect("/index.html")
 });
+
 app.post("/registrace", (req, res) => {
     const jmeno = req.body.jmeno;
     const heslo = req.body.heslo;
@@ -103,6 +124,7 @@ app.post("/registrace", (req, res) => {
     db.set(jmeno, { heslo })
     res.redirect("/kosik.html")
 });
+
 app.post("/doprava", (req, res) =>{
     console.log('přijatá data:' + req.body.data) 
 
@@ -118,7 +140,64 @@ app.post("/doprava", (req, res) =>{
    
 })
 
+app.post("/pridatDoKosiku",(req,res)=>{
+    const prihlaseny = req.session.prihlasenyUzivatel;
+    const co = req.body.zbozi;
+    console.log('přihlášený uživatel: ' + prihlaseny)
+    const dataUzivatele = db.get(prihlaseny);
+    if(!('kosik' in dataUzivatele)){
+        dataUzivatele.kosik = {};
+    }
+    if(typeof dataUzivatele.kosik[co] === 'undefined'){
+        dataUzivatele.kosik[co] = 1;
+    }
+    else{
+        dataUzivatele.kosik[co] += 1;
+    }
+    db.set(prihlaseny, dataUzivatele);
+});
 
+app.get("/doprava", (req, res) => {
+    const prihlaseny = req.session.prihlasenyUzivatel;
+    
+    if(typeof prihlaseny === 'undefined') {
+        return res.redirect('/prihlaseni');
+    }
 
+    res.render("doprava", {
+        chyba: req.query.chyba,
+    })
+})
+
+app.get("/registrace", (req, res) => {
+    res.render("registrace", {
+        chyba: req.query.chyba,
+    })
+})
+
+app.get("/prihlaseni", (req, res) => {
+    res.render("prihlaseni", {
+        chyba: req.query.chyba,
+    })
+})
+
+app.get("/moje-objednavka", (req, res) => {
+    const prihlaseny = req.session.prihlasenyUzivatel;
+    
+    if(typeof prihlaseny === 'undefined') {
+        return res.redirect('/prihlaseni');
+    }
+
+    if(typeof prihlaseny === 'undefined') {
+        return res.redirect('/prihlaseni');
+    }
+
+    const data = db.get(prihlaseny);
+    console.log("data " + data);
+    console.log("kosik " + data.kosik);
+    res.render('moje-objednavka', {
+        polozky: data.kosik
+    })
+})
 
 app.listen(8000);
