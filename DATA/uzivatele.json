@@ -17,10 +17,10 @@
     },
     "ab": {
         "heslo": "1234",
-        "doprava": "zasilkovna",
+        "doprava": "prodejna",
         "kosik": {
-            "pomeranč": 2,
-            "jablko": 1
+            "pomeranč": 11,
+            "jablko": 3
         }
     },
     "a": {

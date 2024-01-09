@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h2>Váše objednávka</h2>
     <% if(polozky) { %>
         <ul>
             <% for(polozka in polozky) { %>
@@ -14,7 +15,7 @@
             <% } %>
         </ul>
     <% } %>
-    <h2>Zadejte údaje platební karty o nic se nebojte</h2>
+    
     <h3>Zvolte způsob dopravy</h3>
     <input type = "radio" id="vyzvednoutNaProdejne" name="zpusobDopravy" value="prodejna">
     <lable for="vyzvednoutNaProdejne">Vyzvednout na prodejně<strong> zdarma</strong></lable><br>

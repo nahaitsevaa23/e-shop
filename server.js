@@ -93,6 +93,7 @@ app.post("/prihlaseni", (req, res) => {
     req.session.prihlasenyUzivatel = jmeno;
 
     res.redirect("/index.html")
+   
 });
 
 app.post("/registrace", (req, res) => {
@@ -153,6 +154,23 @@ app.post("/pridatDoKosiku",(req,res)=>{
     }
     else{
         dataUzivatele.kosik[co] += 1;
+    }
+    db.set(prihlaseny, dataUzivatele);
+});
+
+app.post("/odebrat_z_kosiku",(req,res)=>{
+    const prihlaseny = req.session.prihlasenyUzivatel;
+    const co = req.body.zbozi;
+    console.log('přihlášený uživatel: ' + prihlaseny)
+    const dataUzivatele = db.get(prihlaseny);
+    if(!('kosik' in dataUzivatele)){
+        dataUzivatele.kosik = {};
+    }
+    if(typeof dataUzivatele.kosik[co] === 'undefined'){
+        dataUzivatele.kosik[co] = 0;
+    }
+    else{
+        dataUzivatele.kosik[co] -= 1;
     }
     db.set(prihlaseny, dataUzivatele);
 });
