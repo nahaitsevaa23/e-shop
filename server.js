@@ -158,6 +158,7 @@ app.post("/pridatDoKosiku",(req,res)=>{
     db.set(prihlaseny, dataUzivatele);
 });
 
+<<<<<<< Updated upstream
 app.post("/odebrat_z_kosiku",(req,res)=>{
     const prihlaseny = req.session.prihlasenyUzivatel;
     const co = req.body.zbozi;
@@ -174,6 +175,8 @@ app.post("/odebrat_z_kosiku",(req,res)=>{
     }
     db.set(prihlaseny, dataUzivatele);
 });
+=======
+>>>>>>> Stashed changes
 
 app.get("/doprava", (req, res) => {
     const prihlaseny = req.session.prihlasenyUzivatel;

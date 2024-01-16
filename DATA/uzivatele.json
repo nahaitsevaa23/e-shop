@@ -3,7 +3,8 @@
         "heslo": "1234",
         "doprava": "prodejna",
         "kosik": {
-            "pomeranč": 3
+            "pomeranč": 8,
+            "jablko": 2
         }
     },
     "nekdo": {
@@ -19,12 +20,20 @@
         "heslo": "1234",
         "doprava": "prodejna",
         "kosik": {
+<<<<<<< Updated upstream
             "pomeranč": 11,
             "jablko": 3
+=======
+            "pomeranč": 16,
+            "jablko": 6
+>>>>>>> Stashed changes
         }
     },
     "a": {
-        "heslo": "asdfghjk"
+        "heslo": "asdfghjk",
+        "kosik": {
+            "pomeranč": 1
+        }
     },
     "L": {
         "heslo": "asdfghjk"
