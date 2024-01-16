@@ -12,26 +12,30 @@
     <article><h1>ovoce</h1>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX8gMbNpHHjsHzdb4zmy2kFghuSfDnLYJc5Q&usqp=CAU" alt="Pomeranč">
 <button onclick="pridatDoKosiku('pomeranč')">+</button>
-<<<<<<< Updated upstream
-<button onclick="odebrat_z_košiku('pomeranč')">-</button>
-=======
-<button onclick="odebratZkošiku('pomeranč')">-</button>
->>>>>>> Stashed changes
+
+<button onclick="odebratZkosiku('pomeranč')">-</button>
 
 </article>
 <article>
  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Fuji_apple.jpg/1200px-Fuji_apple.jpg" alt="Jablko">
  <button onclick="pridatDoKosiku('jablko')">+</button>
-<<<<<<< Updated upstream
- <button onclick="odebrat_z_kosiku('jablko')">-</button>
-=======
  <button onclick="odebratZkosiku('jablko')">-</button>
->>>>>>> Stashed changes
 </article>
 </section>
 <script>
     function pridatDoKosiku(co){
         fetch('/pridatDoKosiku',{
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                zbozi: co
+            })
+        });
+    }
+    function odebratZkosiku(co){
+        fetch('/odebratZkosiku',{
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'

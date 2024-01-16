@@ -144,7 +144,7 @@ app.post("/doprava", (req, res) =>{
 app.post("/pridatDoKosiku",(req,res)=>{
     const prihlaseny = req.session.prihlasenyUzivatel;
     const co = req.body.zbozi;
-    console.log('přihlášený uživatel: ' + prihlaseny)
+    console.log('do košíku přidává uživatel:' + prihlaseny)
     const dataUzivatele = db.get(prihlaseny);
     if(!('kosik' in dataUzivatele)){
         dataUzivatele.kosik = {};
@@ -156,27 +156,28 @@ app.post("/pridatDoKosiku",(req,res)=>{
         dataUzivatele.kosik[co] += 1;
     }
     db.set(prihlaseny, dataUzivatele);
+    res.send();
 });
 
-<<<<<<< Updated upstream
-app.post("/odebrat_z_kosiku",(req,res)=>{
+
+app.post("/odebratZkosiku",(req,res)=>{
     const prihlaseny = req.session.prihlasenyUzivatel;
     const co = req.body.zbozi;
-    console.log('přihlášený uživatel: ' + prihlaseny)
+    console.log('z košíku odebírá uživatel:' + prihlaseny)
     const dataUzivatele = db.get(prihlaseny);
     if(!('kosik' in dataUzivatele)){
         dataUzivatele.kosik = {};
     }
-    if(typeof dataUzivatele.kosik[co] === 'undefined'){
+    if(!(co in dataUzivatele.kosik)){
         dataUzivatele.kosik[co] = 0;
     }
-    else{
+    else if(dataUzivatele.kosik[co] > 0 ){
         dataUzivatele.kosik[co] -= 1;
     }
     db.set(prihlaseny, dataUzivatele);
+    res.send();
 });
-=======
->>>>>>> Stashed changes
+
 
 app.get("/doprava", (req, res) => {
     const prihlaseny = req.session.prihlasenyUzivatel;
