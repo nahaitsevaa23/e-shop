@@ -17,14 +17,30 @@
     <% } %>
     
     <h3>Zvolte způsob dopravy</h3>
-    <input type = "radio" id="vyzvednoutNaProdejne" name="zpusobDopravy" value="prodejna">
+    <form method="post" action="/moje-objednavka">
+        <input type = "radio" id="vyzvednoutNaProdejne" name="zpusobDopravy" value="prodejna">
+        <label for="vyzvednoutNaProdejne">Vyzvednout na prodejně<strong> zdarma</strong></lable><br>
+        <input type = "radio" id="zasilkovnaNaAdresu" name="zpusobDopravy" value="naAdresu">
+        <label for="zasilkovnaNaAdresu">Zásilkovna doručení na adresu 95Kč</lable><br>
+        <input type = "radio" id="zasilkovna" name="zpusobDopravy" value="Zásilkovna">
+        <label for="zasilkovna">Zásilkovna 75Kč</lable><br>
+    <input type="submit">Dokončit objednavku</button><br></br>
+    </form>
+    <form method="post" action="/konec-objednavky">
+        <h2>Sem zadejte údaje platební karty, o nic se nebojte</h2>
+        <input type="text" id="udajePlatebniKarty" name="udajePlatebniKarty" value="...">
+        <br><br>
+        <input type="submit"></button>
+    </form>
+
+    <!--<input type = "radio" id="vyzvednoutNaProdejne" name="zpusobDopravy" value="prodejna">
     <lable for="vyzvednoutNaProdejne">Vyzvednout na prodejně<strong> zdarma</strong></lable><br>
     <input type = "radio" id="zasilkovnaNaAdresu" name="zpusobDopravy" value="naAdresu">
     <lable for="zasilkovnaNaAdresu">Zásilkovna doručení na adresu 95Kč</lable><br>
     <input type = "radio" id="zasilkovna" name="zpusobDopravy" value="Zásilkovna">
     <lable for="zasilkovna">Zásilkovna 75Kč</lable><br>
-    <button onclick="myFunction()">Pokračovat</button>
-
+    <button onclick="myFunction()">Dokončit objednavku</button>
+    -->
 
     <script>
         function myFunction(){
@@ -39,6 +55,7 @@
             else if(document.getElementById('zasilkovna').checked){
                 zvolenyZpusob = "zasilkovna"       
             }
+            
             fetch("/doprava",{
                 method:"post",
                 body: JSON.stringify({
@@ -48,6 +65,7 @@
                     "Content-type": "application/json"
                 }
             });
+            
         }
     </script>
 </body>

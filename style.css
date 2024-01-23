@@ -21,3 +21,10 @@ body{
 h1{
     text-align: center;
 }
+h2{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#udajePlatebniKartu{
+    width: 800px;
+}

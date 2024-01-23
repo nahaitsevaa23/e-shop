@@ -1,12 +1,4 @@
 {
-    "Natka": {
-        "heslo": "1234",
-        "doprava": "prodejna",
-        "kosik": {
-            "pomeranč": 1,
-            "jablko": 1
-        }
-    },
     "nekdo": {
         "heslo": "28461937"
     },
@@ -19,10 +11,18 @@
     "ab": {
         "heslo": "1234",
         "doprava": "prodejna",
-        "kosik": {
-            "pomeranč": 0,
-            "jablko": 0
-        }
+        "kosik": {},
+        "objednavky": [
+            {
+                "pomeranč": 0,
+                "jablko": 0,
+                "zpusobDopravy": "prodejna",
+                "datumVytvoreni": "2024-01-23T16:19:08.745Z"
+            },
+            {
+                "datumVytvoreni": "2024-01-23T16:22:05.192Z"
+            }
+        ]
     },
     "a": {
         "heslo": "asdfghjk",
@@ -37,7 +37,52 @@
         "heslo": "asdfghjk"
     },
     "m": {
-        "heslo": "qwertzui"
+        "heslo": "qwertzui",
+        "kosik": {},
+        "objednavka": {
+            "pomeranč": 3,
+            "jablko": 3,
+            "zpusobDopravy": "naAdresu"
+        },
+        "objednavky": [
+            {
+                "pomeranč": 2,
+                "jablko": 2,
+                "zpusobDopravy": "naAdresu"
+            },
+            {
+                "pomeranč": 3,
+                "zpusobDopravy": "prodejna"
+            },
+            {
+                "pomeranč": 2,
+                "jablko": 4,
+                "zpusobDopravy": "naAdresu",
+                "datumVytvoreni": "2024-01-23T15:22:08.418Z"
+            },
+            {
+                "zpusobDopravy": "naAdresu",
+                "datumVytvoreni": "2024-01-23T15:26:15.095Z"
+            },
+            {
+                "pomeranč": 2,
+                "zpusobDopravy": "prodejna",
+                "datumVytvoreni": 2024
+            },
+            {
+                "pomeranč": 5,
+                "jablko": 2,
+                "zpusobDopravy": "prodejna",
+                "datumVytvoreni": "2024-01-23T16:18:30.089Z"
+            },
+            {
+                "datumVytvoreni": "2024-01-23T16:24:41.736Z"
+            },
+            {
+                "pomeranč": 1,
+                "datumVytvoreni": "2024-01-23T16:26:29.943Z"
+            }
+        ]
     },
     "D": {
         "heslo": "qwertzui",
@@ -63,5 +108,6 @@
     "john": {
         "heslo": "QWERTZrand01",
         "doprava": "prodejna"
-    }
+    },
+    "pocitadlo": 5
 }

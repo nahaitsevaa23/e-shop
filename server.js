@@ -5,6 +5,9 @@ const db = new jsondb("./DATA/uzivatele.json");
 
 const app = express();
 const session = require("express-session");
+if (!db.has('pocitadlo')){
+    db.set("pocitadlo", 0)
+}
 
 
 
@@ -216,10 +219,51 @@ app.get("/moje-objednavka", (req, res) => {
 
     const data = db.get(prihlaseny);
     console.log("data " + data);
+    
     console.log("kosik " + data.kosik);
     res.render('moje-objednavka', {
         polozky: data.kosik
     })
 })
+app.post("/moje-objednavka", (req, res) => {
+    const prihlaseny = req.session.prihlasenyUzivatel;
+    const data = db.get(prihlaseny);
+    data.kosik.zpusobDopravy = req.body.zpusobDopravy;
+    data.kosik.datumVytvoreni = new Date();
+
+    console.log("Košík před...");
+    console.log(data.kosik);
+
+    if(!data.objednavky) {
+        data.objednavky = [];
+    }
+
+    data.objednavky.push(data.kosik);
+    data.kosik = {};
+
+    console.log("Košík po...");
+    console.log(data.kosik);
+    console.log("Objednávka...")
+    console.log(data.objednavky);
+
+    db.set(prihlaseny, data);
+    res.redirect("/konec-objednavky.html")
+})
+app.post("/konec-objednavky", (req,res) => {
+
+    const prihlaseny = req.session.prihlasenyUzivatel;
+    const data = db.get(prihlaseny);
+
+
+    const udajePlatebniKarty = req.body.udajePlatebniKarty
+    console.log(udajePlatebniKarty)
+     
+
+
+    if(udajePlatebniKarty != "..."){
+        db.set("pocitadlo", db.get("pocitadlo") + 1)
+    }
+})
+
 
 app.listen(8000);
