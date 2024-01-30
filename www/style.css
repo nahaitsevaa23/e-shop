@@ -2,21 +2,21 @@ body{
     background-color: white	;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 20px;
-    
+    padding-top: 20px; 
     font-family:Arial, Helvetica, sans-serif;
 }
 h1{
     
     color:#15243A;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     
 }
 h2{
    
     color: #15243A;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: xx-large;
+    text-align: center;
 
     
 }
@@ -25,16 +25,32 @@ a{
     font-size: 18px;
 }
 p{
-    font-family:Arial, Helvetica, sans-serif
+    font-family: 'Space Grotesk', sans-serif;
 }
 img{
     image-orientation: from-image;
-    width:255px ;
+    width:255px;
 }
 main{
-    width: 1200px;
+    
     margin: auto;
 }
 #udajePlatebniKartu{
     width: 1200px;
+}
+#head{
+    text-align: center;
+}
+.zoom{
+    max-width: 100px;
+}
+.zoom:hover{
+ color: #2961b4;   
+}
+@media screen and (width > 1000px) {
+    .seznam{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+    }    
 }

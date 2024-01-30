@@ -21,6 +21,17 @@
             },
             {
                 "datumVytvoreni": "2024-01-23T16:22:05.192Z"
+            },
+            {
+                "jablko": 1,
+                "pomeranč": 6,
+                "zpusobDopravy": "prodejna",
+                "datumVytvoreni": "2024-01-30T14:04:47.901Z"
+            },
+            {
+                "pomeranč": 5,
+                "zpusobDopravy": "Zásilkovna",
+                "datumVytvoreni": "2024-01-30T14:06:03.872Z"
             }
         ]
     },
